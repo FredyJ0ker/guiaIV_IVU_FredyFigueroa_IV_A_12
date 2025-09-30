@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guía TICS - Menú, Login, Carrusel y Estadística</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <div class="container">
+    <!-- NAV -->
+    <nav class="nav card" role="navigation" aria-label="Menú principal">
+      <div class="brand" aria-hidden="false">
+        <div class="logo">DB</div>
+        <div>
+          CSDBG <br><small style="font-weight:600;color:var(--muted);font-size:13px">Guía TICS - 4º Bach.</small>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="nav-links" id="navLinks">
+          <a href="#inicio">Inicio</a>
+          <a href="#carrusel">Carrusel</a>
+          <a href="#estadistica">Estadística</a>
+          <a href="#clases">Clases CSS</a>
+        </div>
+
+        <button class="btn" id="openLogin">Iniciar sesión</button>
+
+        <button class="hamburger" id="toggleNav" aria-label="Abrir menú móvil">
+          ☰
+        </button>
+      </div>
+    </nav>
+
+    <main class="grid">
+      <section>
+        <div id="carrusel" class="card carousel" aria-roledescription="carrusel de imágenes">
+          <div class="slides" id="slides">
+            <div class="slide" style="background-image:url('https://picsum.photos/id/1015/1200/600');" aria-hidden="false">
+              <div class="caption">
+                <h3>Bienvenido al proyecto</h3>
+                <p>Ejemplo de carrusel para la guía de TICS — controla y navega las diapositivas.</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image:url('https://picsum.photos/id/1016/1200/600');">
+              <div class="caption">
+                <h3>Diseño y uso de CSS</h3>
+                <p>Usa clases para mantener tu código organizado y explicar su propósito en el cuaderno.</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image:url('https://picsum.photos/id/1025/1200/600');">
+              <div class="caption">
+                <h3>Formulario y estadísticas</h3>
+                <p>Recopila datos, calcula media, mediana y moda, y muéstralos en un gráfico.</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="control prev" id="prevBtn" aria-label="Anterior">‹</button>
+          <button class="control next" id="nextBtn" aria-label="Siguiente">›</button>
+
+          <div class="indicators" id="indicators" aria-hidden="false"></div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3 id="inicio">Descripción</h3>
+          <p>Esta página es un ejemplo práctico que contiene los elementos solicitados por la guía de TICS: menú, formulario de login, carrusel y formulario de estadísticas. Está pensada para que copies el código y expliques cada clase en tu cuaderno.</p>
+        </div>
+
+        <div class="card" id="estadistica" style="margin-top:18px">
+          <h3>Formulario de Estadística</h3>
+          <p>Introduce números separados por comas (por ejemplo: <code>3, 5, 7, 3, 10</code>)</p>
+          <div class="stats-form">
+            <div class="field">
+              <label for="numbers">Números</label>
+              <textarea id="numbers" class="input" placeholder="Ej: 3, 5, 2, 7, 3"></textarea>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="btn" id="calcBtn">Calcular</button>
+              <button class="btn secondary" id="clearBtn">Limpiar</button>
+            </div>
+
+            <div class="results" id="results" aria-live="polite"></div>
+
+            <canvas id="statsChart" style="max-width:100%; margin-top:14px"></canvas>
+          </div>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <h4>Acceso rapido</h4>
+          <p style="color:var(--muted)">Pulsa "Iniciar sesión" para abrir el formulario de login.</p>
+
+          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(18,49,79,0.04)">
+
+          <h5>Instrucciones para el cuaderno</h5>
+          <ul style="margin:6px 0 0 18px; color:var(--muted)">
+            <li>Escribe cada clase CSS que uses en tu página.</li>
+            <li>Junto a la clase escribe su función o concepto (usa un color distinto para cada una).</li>
+            <li>Pega fragmentos de HTML si lo necesitas.</li>
+          </ul>
+        </div>
+
+        <div class="card" id="clases" style="margin-top:18px">
+          <h4>Clases CSS (cópialas al cuaderno)</h4>
+          <p style="color:var(--muted);margin-bottom:8px">Cada bloque muestra la clase y su concepto.</p>
+
+          <div class="class-list">
+            <div class="class-item"><span class="class-name" style="color:#1e88e5">.nav</span><span class="class-desc">Contenedor del menú superior (barra de navegación)</span></div>
+            <div class="cl
